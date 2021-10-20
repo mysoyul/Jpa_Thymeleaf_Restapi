@@ -3,6 +3,8 @@ package jpastudy.jpashop.repository;
 import jpastudy.jpashop.domain.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -15,7 +17,9 @@ public class MemberRepository {
     private final EntityManager em;
 
     //등록
+    @Transactional(propagation = Propagation.REQUIRED)
     public void save(Member member) {
+
         em.persist(member);
     }
     //id로 Member 하나 조회

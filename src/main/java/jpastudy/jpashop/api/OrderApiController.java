@@ -107,7 +107,7 @@ public class OrderApiController {
      */
     @GetMapping("/api/v5/orders")
     public List<OrderQueryDto> ordersV5() {
-        return orderQueryRepository.findOrdersQueryDtos_optimize_before();
+        return orderQueryRepository.findOrdersQueryDtos_optimize_after();
     }
 
     //----------응답과 요청에 사용할 DTO Inner Class 선언

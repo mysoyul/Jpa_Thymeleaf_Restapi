@@ -11,6 +11,8 @@ spring: #띄어쓰기 없음
       hibernate: #띄어쓰기 6칸
         show_sql: true #띄어쓰기 8칸
         format_sql: true #띄어쓰기 8칸
+        #ToMany관계인 엔티티 객체를 조회할 때 IN 구문의 파라미터 갯수
+        default_batch_fetch_size: 1000
 
 logging.level: #띄어쓰기 없음
   org.hibernate.sql: debug #띄어쓰기 2칸
